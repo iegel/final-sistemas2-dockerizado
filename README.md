@@ -30,6 +30,16 @@ tpsistemas2/
     └── src/
         └── App.jsx
 ```
+## Variables de entorno
+
+`backend/.env`:
+
+```
+MONGO_URI=mongodb://mongo:27017/sistemas2
+PORT=3001
+```
+
+`mongo` es el nombre del servicio de Mongo en `docker-compose.yml` — Docker resuelve ese nombre dentro de la red interna `app-network`, no hace falta una IP fija.
 
 ## Cómo levantarlo
 
@@ -60,17 +70,6 @@ docker compose down
 ```
 
 (Los datos de Mongo persisten entre reinicios gracias al volumen `mongo-data`. Para borrarlos también: `docker compose down -v`.)
-
-## Variables de entorno
-
-`backend/.env`:
-
-```
-MONGO_URI=mongodb://mongo:27017/sistemas2
-PORT=3001
-```
-
-`mongo` es el nombre del servicio de Mongo en `docker-compose.yml` — Docker resuelve ese nombre dentro de la red interna `app-network`, no hace falta una IP fija.
 
 ## Endpoints de la API
 
